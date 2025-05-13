@@ -26,14 +26,14 @@ The following SQL commands were used:
 Creating a pluggable database
 
 the first step is to create a directory for the datafiles of your pluggable database using the following command:
-mkdir C:\oracle21c\oradata\ORCL\thu_26654_pdb_assI\;
+mkdir C:\oracle21c\oradata\ORCL\thu_26426_pdb_assI\;
 then create the pdb
 CREATE PLUGGABLE DATABASE thu_26654_pdb_assI
 ADMIN USER admindba IDENTIFIED BY aline
 ROLES = (DBA)
-FILE_NAME_CONVERT = ('C:\oracle21c\oradata\ORCL\pdbseed\','C:\oracle21c\oradata\ORCL\thu_26654_pdb_assI\');
+FILE_NAME_CONVERT = ('C:\oracle21c\oradata\ORCL\pdbseed\','C:\oracle21c\oradata\ORCL\thu_26426_pdb_assI\');
 since i did not take screenshot before when i was creating it, here it is what shows it is created.
-ALTER PLUGGABLE DATABASE thu_26654_pdb_assI OPEN;
+ALTER PLUGGABLE DATABASE thu_26426_pdb_assI OPEN;
 SHOW PDBS;
 
 ![image](https://github.com/user-attachments/assets/260a7215-322e-4ecb-9606-271736fd05d8)
@@ -41,7 +41,7 @@ SHOW PDBS;
 Enable for usage
 
 When the pdb is created it cannot be accessed or used immediately so it need to be open using the following commands
-ALTER PLUGGABLE DATABASE thu_26654_pdb_assI OPEN;SELECT name, open_mode from V$PDBS; --- this is shows that it is opened or ready to be used
+ALTER PLUGGABLE DATABASE thu_26426_pdb_assI OPEN;SELECT name, open_mode from V$PDBS; --- this is shows that it is opened or ready to be used
 ![image](https://github.com/user-attachments/assets/947ca7f0-0b12-441e-a295-b5c437bcd80d)
 
 Configurations
@@ -49,13 +49,13 @@ Configurations
 This is to connect my pdb with the listener so that it can be accessed in sql deveoper we use the net configuration assistant app and follow the following steps:
 step 1: local net service name configuration
 step 2: add
-step 3: Service name : thu_26654_pdb_assI
+step 3: Service name : thu_26426_pdb_assI
 step 4: TCP
 step 5: hostname: localhost, port: 1521
 step 6: Do the test if u want
 step 7: give an alias your Pdb for easy access if you want and finish
 And Try to connect using the following codes:
-connect admindba/aline@thu_26654_pdb_assI;
+connect admindba/aline@thu_26426_pdb_assI;
 show con_name con_id
 
 
